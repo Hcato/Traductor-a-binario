@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="application">
+    <div id="app">
+        <div>
+            <h1>Convertidor de números</h1>
+            <input v-model="numero" autofocus type="text" placeholder="Pega el número que quieras convertir">   
+            <button onclick="app.Clean()">Limpiar</button> 
+        </div>
+        <div>
+            <li>
+                <label>Cambiar base</label>
+                <ul>
+                    <label>
+                        <input v-model="Base" value="2" type="radio" name="tipodeconversion">
+                        Binario
+                    </label>
+                </ul>
+                <ul>
+                    <label>
+                        <input v-model="Base" value="8" type="radio" name="tipodeconversion">
+                        Octal
+                    </label>
+                </ul>
+                <ul>
+                    <label>
+                        <input v-model="Base" value="10" type="radio" name="tipodeconversion">
+                        Decimal
+                    </label>
+                </ul>
+                <ul>
+                    <label>
+                        <input v-model="Base" value="16" type="radio" name="tipodeconversion">
+                        Hexadecimal
+                    </label>
+                </ul>
+            </li>
+        </div>
+        <div>
+            <div>
+                <p>Binario:</p>
+                <input v-model="binario" readonly type="text"> 
+                <input v-model="binarioascii" readonly type="text"placeholder ="Ascci-num">   
+            </div>
+            <div>
+                <p>Octal:</p>
+                <input v-model="octal" readonly type="text">
+                <input v-model="octalascii" readonly type="text"placeholder ="Ascci-num">     
+            </div>
+            <div>
+                <p>Decimal:</p>
+                <input v-model="decimal" readonly type="text">
+                <input v-model="decimalascii" readonly type="text"placeholder ="Ascci-num">     
+            </div>
+            <div>
+                <p>Hexadecimal:</p>
+                <input v-model="hexadecimal" readonly type="text">
+                <input v-model="hexadecimalascii" readonly type="text"placeholder ="Ascci-num">     
+            </div>
+            <div>
+                <p>Código ASCII:</p>
+                <input :value="ascii.join(', ')" readonly type="text">
+            </div>            
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>
