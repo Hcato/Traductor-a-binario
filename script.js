@@ -32,8 +32,6 @@ const app = new Vue({
             this.hexadecimalascii = this.hexadecimal.split("").map(char => char.charCodeAt(0));
         },
         generateAscii(num) {
-            if (!numero || numero.toString().length > 21)
-                return;
             if (!num) {
                 this.ascii = [];
                 this.binario = [];
@@ -48,7 +46,6 @@ const app = new Vue({
                 this.binario = this.ascii.map(ascii => ascii.toString(2).padStart(8, "0"));
             }
         },
-        
         Clean() {
             this.numero = "";
             this.binario = "";
